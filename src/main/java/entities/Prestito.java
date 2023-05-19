@@ -22,6 +22,7 @@ import lombok.ToString;
 @ToString
 @NoArgsConstructor
 @NamedQuery(name = "Prestito.findByNumeroTesseraAndPrestitoAttivo", query = "SELECT p.elementoprestato FROM Prestito p JOIN p.utente u WHERE u.numerotessera = :numerotessera AND p.restituzioneeffettiva IS NULL")
+//@NamedQuery(name = "Prestito.findPrestitiScadutiAndNonConsegnati", query = "SELECT p FROM Prestito p WHERE p.restituzioneeffettiva IS NULL AND p.restituzioneprevista < :inizioprestito")
 public class Prestito {
 	@Id
 	@GeneratedValue

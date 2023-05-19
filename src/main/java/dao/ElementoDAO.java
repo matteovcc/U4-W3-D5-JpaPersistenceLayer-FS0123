@@ -78,4 +78,10 @@ public class ElementoDAO {
 		q.setParameter("numerotessera", numerotessera);
 		return q.getResultList();
 	}
+
+//	public List<Prestito> findPrestitiScadutiAndNonConsegnati( ) {
+//		TypedQuery<Prestito> q = em.createNamedQuery("Prestito.findPrestitiScadutiAndNonConsegnati", Prestito.class);
+//		q.setParameter("inizioprestito", inizioprestito);
+//		return q.getResultList();
+//	}
 }

@@ -97,6 +97,21 @@ public class Main {
 		System.out.println(
 				"ELEMENTI ATTUALMENTE IN PRESTITO DELL'UTENTE(user2) CON TESSERA 591(PRESTITO p2,PRESTITO p3)");
 		ed.findByNumeroTesseraAndPrestitoAttivo(591).stream().forEach(prestito -> log.info(prestito.toString()));
+
+		// Ricerca di tutti i prestiti scaduti e non ancora restituiti
+		Utente foundutente3 = ud.getById(4);
+		Libro l2 = new Libro("Can't hurt me", 2019, 300, "David Goggins", "Autobiography");
+//		ld.save(l2);
+		Libro foundlibro2 = ld.getById("dd5ee793-7092-4dc1-9c70-95f2f45a1ed6");
+
+		Prestito p4 = new Prestito(foundutente3, foundlibro2, LocalDate.of(2022, 01, 01),
+				LocalDate.of(2022, 01, 01).plusDays(30), null);
+//		pd.save(p4);
+
+//		log.info("" + ed.findPrestitiScadutiAndNonConsegnati(LocalDate.now()));
+
+		em.close();
+		emf.close();
 	}
 
 }
