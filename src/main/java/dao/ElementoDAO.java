@@ -79,9 +79,8 @@ public class ElementoDAO {
 		return q.getResultList();
 	}
 
-//	public List<Prestito> findPrestitiScadutiAndNonConsegnati( ) {
-//		TypedQuery<Prestito> q = em.createNamedQuery("Prestito.findPrestitiScadutiAndNonConsegnati", Prestito.class);
-//		q.setParameter("inizioprestito", inizioprestito);
-//		return q.getResultList();
-//	}
+	public List<Elemento> findScadutiAndNonConsegnati() {
+		TypedQuery<Elemento> q = em.createNamedQuery("Prestito.findScadutiAndNonConsegnati", Elemento.class);
+		return q.getResultList();
+	}
 }

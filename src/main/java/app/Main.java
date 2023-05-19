@@ -109,6 +109,7 @@ public class Main {
 //		pd.save(p4);
 
 //		log.info("" + ed.findPrestitiScadutiAndNonConsegnati(LocalDate.now()));
+		log.info(ed.findScadutiAndNonConsegnati().toString());
 
 		em.close();
 		emf.close();
