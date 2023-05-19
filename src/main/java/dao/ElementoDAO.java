@@ -1,5 +1,6 @@
 package dao;
 
+import java.util.List;
 import java.util.UUID;
 
 import javax.persistence.EntityManager;
@@ -8,6 +9,7 @@ import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
 import entities.Elemento;
+import entities.Libro;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -56,5 +58,24 @@ public class ElementoDAO {
 		TypedQuery<Elemento> q = em.createNamedQuery("Elemento.findByYear", Elemento.class);
 		q.setParameter("anno", anno);
 		return q.getSingleResult();
+	}
+
+	public Libro getByAuthor(String autore) {
+		TypedQuery<Libro> q = em.createNamedQuery("Libro.getByAuthor", Libro.class);
+		q.setParameter("autore", autore);
+		return q.getSingleResult();
+	}
+
+	public Elemento findByTitolo(String titolo) {
+		TypedQuery<Elemento> q = em.createNamedQuery("Elemento.findByTitolo", Elemento.class);
+		q.setParameter("titolo", titolo);
+		return q.getSingleResult();
+
+	}
+
+	public List<Elemento> findByNumeroTesseraAndPrestitoAttivo(long numerotessera) {
+		TypedQuery<Elemento> q = em.createNamedQuery("Prestito.findByNumeroTesseraAndPrestitoAttivo", Elemento.class);
+		q.setParameter("numerotessera", numerotessera);
+		return q.getResultList();
 	}
 }

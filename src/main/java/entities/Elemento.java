@@ -26,6 +26,8 @@ import lombok.ToString;
 @ToString
 
 @NamedQuery(name = "Elemento.findByYear", query = "SELECT y FROM Elemento y WHERE y.anno = :anno ")
+@NamedQuery(name = "Elemento.findByTitolo", query = "SELECT e FROM Elemento e WHERE e.titolo LIKE :titolo")
+
 public class Elemento {
 	@Id
 	@GeneratedValue

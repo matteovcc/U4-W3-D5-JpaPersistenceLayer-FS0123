@@ -1,6 +1,7 @@
 package entities;
 
 import javax.persistence.Entity;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 import lombok.Getter;
@@ -14,7 +15,7 @@ import lombok.ToString;
 @Setter
 @ToString
 @NoArgsConstructor
-
+@NamedQuery(name = "Libro.getByAuthor", query = "SELECT l from Libro l WHERE l.autore = :autore")
 public class Libro extends Elemento {
 	private String autore;
 	private String genere;

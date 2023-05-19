@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 import lombok.Getter;
@@ -20,6 +21,7 @@ import lombok.ToString;
 @Setter
 @ToString
 @NoArgsConstructor
+@NamedQuery(name = "Prestito.findByNumeroTesseraAndPrestitoAttivo", query = "SELECT p.elementoprestato FROM Prestito p JOIN p.utente u WHERE u.numerotessera = :numerotessera AND p.restituzioneeffettiva IS NULL")
 public class Prestito {
 	@Id
 	@GeneratedValue

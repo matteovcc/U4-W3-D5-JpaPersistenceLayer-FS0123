@@ -1,5 +1,7 @@
 package dao;
 
+import java.util.UUID;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 
@@ -19,8 +21,8 @@ public class RivistaDAO {
 		transaction.commit();
 	}
 
-	public Rivista getById(long id) {
-		Rivista found = em.find(Rivista.class, id);
+	public Rivista getById(String id) {
+		Rivista found = em.find(Rivista.class, UUID.fromString(id));
 
 		if (found != null) {
 			System.out.println("Rivista" + " " + id + " " + "trovato");
