@@ -33,11 +33,15 @@ public class Main {
 		Rivista r1 = new Rivista("Vanity Fair", 2010, 70, Periodicità.SETTIMANALE);
 //		rd.save(r1);
 
-		// -----FIND BY ID AND DELETE-----
+		// -----FIND BY UUID(isbn) AND DELETE----- ///
 		Elemento elementodacancellare = new Elemento("Titolo", 2006, 250);
 //		ed.save(elementodacancellare);
 		// uuid : a0dd7eb8-869a-420f-ab8d-587355618a54
 		ed.findByIdAndDelete("a0dd7eb8-869a-420f-ab8d-587355618a54");
+		// Find by ISBN Libro l1 Harry Potter
+		ld.getById("dd0aeb08-5389-4b9a-91d8-f33df096bea7");
+		// RICERCA PER ANNO
+		log.info(ed.findByYear(2000).toString());
 
 	}
 

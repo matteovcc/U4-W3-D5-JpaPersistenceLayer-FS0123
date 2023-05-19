@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -23,6 +24,8 @@ import lombok.ToString;
 @Setter
 @NoArgsConstructor
 @ToString
+
+@NamedQuery(name = "Elemento.findByYear", query = "SELECT y FROM Elemento y WHERE y.anno = :anno ")
 public class Elemento {
 	@Id
 	@GeneratedValue

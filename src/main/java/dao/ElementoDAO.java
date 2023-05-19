@@ -5,6 +5,7 @@ import java.util.UUID;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 
 import entities.Elemento;
 import lombok.extern.slf4j.Slf4j;
@@ -49,5 +50,11 @@ public class ElementoDAO {
 			log.info("non abbiamo trovato  niente da cancellare");
 		}
 		return n;
+	}
+
+	public Elemento findByYear(int anno) {
+		TypedQuery<Elemento> q = em.createNamedQuery("Elemento.findByYear", Elemento.class);
+		q.setParameter("anno", anno);
+		return q.getSingleResult();
 	}
 }
