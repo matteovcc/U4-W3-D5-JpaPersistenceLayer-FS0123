@@ -15,6 +15,7 @@ import lombok.ToString;
 @ToString
 @NoArgsConstructor
 public class Rivista extends Elemento {
+	private String titolo;
 	private Periodicità periodicita;
 
 	public enum Periodicità {

@@ -1,6 +1,7 @@
 package entities;
 
 import java.util.List;
+import java.util.UUID;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -22,10 +23,10 @@ import lombok.ToString;
 @Setter
 @NoArgsConstructor
 @ToString
-public abstract class Elemento {
+public class Elemento {
 	@Id
 	@GeneratedValue
-	private long id;
+	private UUID id;
 	private String titolo;
 	private int anno;
 	private int pagine;
